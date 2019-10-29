@@ -19,11 +19,6 @@
         "add": "add-component",
         "lint": "eslint src --ext .ts,.tsx && stylelint \"./src/**/*.scss\""
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint"
-        }
-    },
     "author": "",
     "license": "MIT",
     "dependencies": {
