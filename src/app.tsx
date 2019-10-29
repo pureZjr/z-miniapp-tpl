@@ -5,7 +5,6 @@ import { Provider } from '@tarojs/mobx'
 import 'taro-ui/dist/style/index.scss'
 
 import store from '@store/index'
-import './styles/icon/iconfont.css'
 import Home from './container/pages/home'
 import './app.scss'
 
