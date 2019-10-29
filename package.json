@@ -1,8 +1,8 @@
 {
-    "name": "tarodingdong",
-    "version": "1.0.0",
+    "name": "{{projectName}}",
+    "version": "{{projectVersion}}",
+    "description": "{{projectDescription}}",
     "private": true,
-    "description": "dingdong",
     "scripts": {
         "build:weapp": "taro build --type weapp",
         "build:swan": "taro build --type swan",
@@ -73,7 +73,6 @@
         "eslint-plugin-react": "^7.14.3",
         "eslint-plugin-taro": "^1.3.5",
         "husky": "^3.0.3",
-        "moment": "^2.24.0",
         "prettier": "^1.17.0",
         "qs": "^6.7.0",
         "sass-bem": "^2.6.5",

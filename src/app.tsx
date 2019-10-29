@@ -6,22 +6,12 @@ import 'taro-ui/dist/style/index.scss'
 
 import store from '@store/index'
 import './styles/icon/iconfont.css'
+import Home from './container/pages/home'
 import './app.scss'
 
 class App extends Component {
     config: Taro.Config = {
-        pages: [
-            'container/pages/home/index',
-            'container/pages/login/index',
-            'container/pages/orderHistory/index',
-            'container/pages/userInfo/index',
-            'container/pages/order/index',
-            'container/pages/selectCars/index',
-            'container/pages/selectReturnPosition/index',
-            'container/pages/wallet/index',
-            'container/pages/info/index',
-            'container/pages/editName/index',
-        ],
+        pages: ['container/pages/home/index'],
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#fff',
@@ -36,7 +26,11 @@ class App extends Component {
     }
 
     render() {
-        return <Provider store={store} />
+        return (
+            <Provider store={store}>
+                <Home />
+            </Provider>
+        )
     }
 }
 

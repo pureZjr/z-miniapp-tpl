@@ -1,6 +1,6 @@
-import UserStore from '@store/UserStore'
+import TestStore from '@store/TestStore'
 
 const store = {
-    UserStore,
+    TestStore,
 }
 export default store

@@ -1,7 +1,5 @@
 import Taro from '@tarojs/taro'
 import '@tarojs/async-await'
-
-import { getItem } from './localstorage'
 import config from '../config'
 
 type HttpMethods = 'GET' | 'POST'
@@ -19,10 +17,6 @@ export default class Http {
 
     HandleHttp = async (method: HttpMethods, u: string, data: Object) => {
         return new Promise(async (resolve, reject) => {
-            const token = await getItem('token')
-            if (!!token) {
-                data['token'] = token
-            }
             const url = baseUrl + u
             Taro.showLoading({
                 title: '加载中...',
@@ -38,23 +32,9 @@ export default class Http {
                     },
                 })
                 Taro.hideLoading()
-                // status 1: 请求成功；2: 没权限
                 switch (res.statusCode) {
                     case 200:
-                        if (res.data.status === 1) {
-                            resolve(res.data.data)
-                        } else if (res.data.status === 2) {
-                            Taro.redirectTo({
-                                url: '/container/pages/login/index',
-                            })
-                        } else {
-                            resolve(null)
-                        }
-                        break
-                    case 401:
-                        Taro.redirectTo({
-                            url: '/container/pages/login/index',
-                        })
+                        resolve(res.data.data)
                         break
                     default:
                         reject(new Error(res.data.message))

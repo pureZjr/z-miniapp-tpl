@@ -9,6 +9,7 @@ module.exports = {
         '.prettierrc.js',
         '.eslintrc.js',
         '.stylelintrc.js',
+        'package.json',
     ],
     extends: ['stylelint-config-ydj/scss', 'stylelint-config-ydj/prettier'],
     rules: {
